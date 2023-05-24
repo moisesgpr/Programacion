@@ -1,65 +1,66 @@
 'use strict'
 
-// Evento del raton
+window.addEventListener('load', () => {
+    // Evento del raton
 
-function cambiarColor(){
-    console.log('Me has dado click');
+    function cambiarColor() {
+        console.log('Me has dado click');
 
-    let bg = boton.style.background;
+        let bg = boton.style.background;
 
-    if(bg == 'green') {
-        boton.style.background ='red';
-    } else {
-        boton.style.background = 'green';
+        if (bg == 'green') {
+            boton.style.background = 'red';
+        } else {
+            boton.style.background = 'green';
+        }
+
+        boton.style.padding = '10px';
+        boton.style.border = '1px solid #ccc';
+
+        return true;
     }
-    
-    boton.style.padding = '10px';
-    boton.style.border = '1px solid #ccc';
 
-    return true;
-}
+    let boton = document.querySelector('#boton');
 
-let boton = document.querySelector('#boton');
-
-// Click
-boton.addEventListener('click', function(){
-    cambiarColor();
-});
-
-// Mouse over
-boton.addEventListener('mouseover', function(){
-boton.style.background = '#ccc'
-});
-
-// Mouseout
-boton.addEventListener('mouseout', function(){
-    boton.style.background = 'black'
+    // Click
+    boton.addEventListener('click', function () {
+        cambiarColor();
     });
 
-// Focus
-let input = document.querySelector('#campo_nombre');
+    // Mouse over
+    boton.addEventListener('mouseover', function () {
+        boton.style.background = '#ccc'
+    });
 
-input.addEventListener('focus', function(){
-    console.log('Estas dentro del input');
-});
+    // Mouseout
+    boton.addEventListener('mouseout', function () {
+        boton.style.background = 'black'
+    });
 
+    // Focus
+    let input = document.querySelector('#campo_nombre');
 
-// Blur
-input.addEventListener('blur', function(){
-    console.log('Estas fuera del input');
-});
+    input.addEventListener('focus', function () {
+        console.log('Estas dentro del input');
+    });
 
-// Keydown
-input.addEventListener('keydown', function(event){
-    console.log('Pulsando esta tecla ', String.fromCharCode(event.keyCode));
-});
+    // Blur
+    input.addEventListener('blur', function () {
+        console.log('Estas fuera del input');
+    });
 
-// Keypress
-input.addEventListener('keypress', function(event){
-    console.log('Tecla presionado ', String.fromCharCode(event.keyCode));
-});
+    // Keydown
+    input.addEventListener('keydown', function (event) {
+        console.log('Pulsando esta tecla ', String.fromCharCode(event.keyCode));
+    });
 
-// Keyup
-input.addEventListener('keyup', function(event){
-    console.log('Tecla soltada ', String.fromCharCode(event.keyCode));
+    // Keypress
+    input.addEventListener('keypress', function (event) {
+        console.log('Tecla presionado ', String.fromCharCode(event.keyCode));
+    });
+
+    // Keyup
+    input.addEventListener('keyup', function (event) {
+        console.log('Tecla soltada ', String.fromCharCode(event.keyCode));
+    });
 });
